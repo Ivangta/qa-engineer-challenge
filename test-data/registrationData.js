@@ -1,9 +1,29 @@
-const { generateRandomEmail } = require('../helpers/randomGenerator');
+const { generateRandomEmail,
+        generateRandomDateOfBirth,
+        generateRandomPhoneNumber,       
+        generateRandomLinkedIn,
+        generateRandomGitHub
+ } = require('../helpers/randomGenerator');
 
-exports.registrationData = {
+exports.registrationDataMandatory = {
+    firstName: "John",
+    lastName: "Adams",
+    email: generateRandomEmail(),
+    password: "P@ssw0rd",
+    confirmPassword: "P@ssw0rd"
+};
+
+exports.registrationDataAll = {
     firstName: "John",
     lastName: "Adams",
     email: generateRandomEmail(),
     password: "Dato123!",
-    confirmPassword: "Dato123!"
+    confirmPassword: "Dato123!",
+    
+    gender: 'female',
+    dateOfBirth: generateRandomDateOfBirth(),
+    phoneNumber: generateRandomPhoneNumber(),
+    address: "Burgas, Bulgaria",
+    linkedIn: generateRandomLinkedIn(),
+    gitHub: generateRandomGitHub()
 };

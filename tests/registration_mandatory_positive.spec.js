@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 const {RegistrationPage} = require('../pages/RegistrationPage');
-const {registrationData} = require('../test-data/registrationData');
+const {registrationDataMandatory} = require('../test-data/registrationData');
 
 test('User registers successfully', async ({ page }) => 
     {
@@ -17,12 +17,10 @@ test('User registers successfully', async ({ page }) =>
         const registrationPage = new RegistrationPage(page);
 
         await registrationPage.navigate();
-        await registrationPage.fillRegistrationForm(registrationData);
+        await registrationPage.fillRegistrationFormMandatory(registrationDataMandatory);
         await registrationPage.submit();
 
         //No alert or validation error should be present
         expect(dialogError,`Unexpected alert appeared: "${dialogMessage}"`).toBeFalsy();
     });
-
-
 
