@@ -1,14 +1,12 @@
 const {test, expect} = require('@playwright/test');
 const {RegistrationPage} = require('../pages/RegistrationPage');
-const {registrationDataMandatory} = require('../test-data/registrationData');
+const {registrationDataNotIdenticalPasswords} = require('../test-data/registrationData');
 
-test('User registers successfully with mandatory fields', async ({ page }) => 
-    {
-        let dialogError = false;
+test('Validation messages must be present and correct when passwords entered in the Password and Confirm Password fields are not identical', async ({page})=>
+{
         let dialogMessage = '';
 
         page.on('dialog', async dialog => {
-            dialogError = true;
             dialogMessage = dialog.message();
             console.log(`Unexpected alert: ${dialogMessage}`);
             await dialog.accept();
@@ -17,10 +15,9 @@ test('User registers successfully with mandatory fields', async ({ page }) =>
         const registrationPage = new RegistrationPage(page);
 
         await registrationPage.navigate();
-        await registrationPage.fillRegistrationFormMandatory(registrationDataMandatory);
+        await registrationPage.fillRegistrationFormMandatory(registrationDataNotIdenticalPasswords);
         await registrationPage.submit();
 
-        //No alert or validation error should be present
-        expect(dialogError,`Unexpected alert appeared: "${dialogMessage}"`).toBeFalsy();
-    });
-
+        //Validation error for identical passwords
+        expect(dialogMessage).toContain('Passwords do not match');
+});

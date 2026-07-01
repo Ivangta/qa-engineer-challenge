@@ -59,6 +59,23 @@ class RegistrationPage{
     async submit() {
         await this.submitButton.click();
     }
+
+    async submitAndReceiveDialogMessage(){
+    const dialogProcess = this.page.waitForEvent('dialog');
+
+    await this.submit();
+
+    const dialog = await dialogProcess;
+    const message = dialog.message();
+
+    await dialog.accept();
+
+    return message;
+}
+
+async getEmailValidationMessage() {
+    return await this.email.evaluate(element => element.validationMessage);
+}
 }
 
 module.exports = {RegistrationPage};

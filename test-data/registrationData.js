@@ -27,3 +27,11 @@ exports.registrationDataAll = {
     linkedIn: generateRandomLinkedIn(),
     gitHub: generateRandomGitHub()
 };
+
+exports.registrationDataNotIdenticalPasswords = {
+    firstName: "John",
+    lastName: "Adams",
+    email: generateRandomEmail(),
+    password: "P@ssw0rd123",
+    confirmPassword: "P@ssw0rd1234"
+};

@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test');
 const {RegistrationPage} = require('../pages/RegistrationPage');
 
-test('Password and Confirm Password fields should use password input type', async ({page})=>
+test('Password fields hide password correctly', async ({page})=>
 {
     const registrationPage = new RegistrationPage(page);
 

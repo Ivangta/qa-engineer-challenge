@@ -30,7 +30,7 @@
 **Expected Result:**
 - User profile is created successfully without validation error messages
 
-# Test Case 02 - Password fields hide password correctly
+# Test Case 03 - Password fields hide password correctly
 
 # Precondition: Page must be opened
 
@@ -41,7 +41,7 @@
 **Expected Result:**
 - Password fields hide the text with symbols
 
-# Test Case 03 - Validation messages must be correct when a mandatory field is missing
+# Test Case 04 - Validation messages must be correct when a mandatory field is missing
 
 # Precondition: Page must be opened
 
@@ -66,7 +66,7 @@
 *messageThree* -> "Password must be filled out"
 *messageFour* -> "Confirm Password must be filled out"
 
-# Test Case 04 - Validation messages must be present and correct when passwords entered in the Password and Confirm Password fields are not identical
+# Test Case 05 - Validation messages must be present and correct when passwords entered in the Password and Confirm Password fields are not identical
 
 # Precondition: Page must be opened
 
@@ -81,7 +81,7 @@
 **Expected Result:**
 - Validation error message appears "Passwords do not match"
 
-# Test Case 05 - Validate that incorrect email formats are not accepted as valid
+# Test Case 06 - Validate that incorrect email formats are not accepted as valid
 
 # Precondition: Page must be opened
 

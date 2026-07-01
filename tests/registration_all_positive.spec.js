@@ -2,7 +2,7 @@ const {test, expect} = require('@playwright/test');
 const {RegistrationPage} = require('../pages/RegistrationPage');
 const {registrationDataAll} = require('../test-data/registrationData');
 
-test('User registers successfully', async ({ page }) => 
+test('User registers successfully with all fields', async ({ page }) => 
     {
         let dialogError = false;
         let dialogMessage = '';
