@@ -2,6 +2,11 @@
 
 Automation project built with Playwright and JavaScript using the Page Object Model (POM).
 
+## Tech Stack
+- Playwright
+- JavaScript
+- Page Object Model (POM)
+
 ## Project Structure
 pages/ ->       Page Objects
 tests/ ->       Test Suites
@@ -23,6 +28,10 @@ Implemented automated tests include:
 
 ## Notes
 - Mandatory field validation is implemented using native browser JavaScript dialogs (`alert()`). During automation, the application consistently blocks on the error message, preventing from testing the scenario. 
+
+## Known Important Issues
+- Confirmation Password is not hidden
+- LinkedIn field is registered as mandatory for registration
 
 ## How to Run
 
